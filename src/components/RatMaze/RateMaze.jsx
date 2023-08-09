@@ -105,7 +105,9 @@ const RateMaze = () => {
   };
   const { grid } = state;
   return (
-    <>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
       <div className="dzovi">
         {grid &&
           grid.map((row, rowIndex) => {
@@ -130,8 +132,24 @@ const RateMaze = () => {
             );
           })}
       </div>
-      <button onClick={algoRat}>Start</button>
-    </>
+      <button onClick={algoRat} className="button-1">
+        Start
+      </button>
+      <div className="info">
+        Please be aware of the following :
+        <ul>
+          <li>if you want to restart just refresh the page.</li>
+          <li>
+            before starting you can make walls by pressing on an empty square.
+          </li>
+          <li>if there is no path found you will be alerted.</li>
+          <li>
+            sometimes even when there is a path it bugs so just refresh the page
+            and try again and it will work.
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 };
 
